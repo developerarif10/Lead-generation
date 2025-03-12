@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 interface LeadCaptureFormProps {
-  title?: string
-  subtitle?: string
-  buttonText?: string
-  className?: string
+  title?: string;
+  subtitle?: string;
+  buttonText?: string;
+  className?: string;
 }
 
 export default function LeadCaptureForm({
@@ -24,41 +24,45 @@ export default function LeadCaptureForm({
     phone: "",
     propertyType: "",
     message: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate API call
     setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSuccess(true)
+      setIsSubmitting(false);
+      setIsSuccess(true);
 
       // Reset form after 3 seconds
       setTimeout(() => {
-        setIsSuccess(false)
+        setIsSuccess(false);
         setFormData({
           name: "",
           email: "",
           phone: "",
           propertyType: "",
           message: "",
-        })
-      }, 3000)
-    }, 1500)
-  }
+        });
+      }, 3000);
+    }, 1500);
+  };
 
   return (
     <div className={className}>
@@ -115,7 +119,7 @@ export default function LeadCaptureForm({
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-slate-500 focus:border-transparent"
             >
-              <option value="">I'm interested in...</option>
+              <option value="">I&apos;m interested in...</option>
               <option value="buying">Buying a property</option>
               <option value="selling">Selling my property</option>
               <option value="renting">Renting a property</option>
@@ -131,7 +135,7 @@ export default function LeadCaptureForm({
               onChange={handleChange}
               placeholder="Tell us more about what you're looking for (optional)"
               rows={3}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-900 rounded-md focus:ring-2 focus:ring-slate-500 focus:border-transparent"
             ></textarea>
           </div>
 
@@ -148,7 +152,14 @@ export default function LeadCaptureForm({
                   fill="none"
                   viewBox="0 0 24 24"
                 >
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
                   <path
                     className="opacity-75"
                     fill="currentColor"
@@ -174,6 +185,5 @@ export default function LeadCaptureForm({
         </form>
       )}
     </div>
-  )
+  );
 }
-

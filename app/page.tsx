@@ -31,7 +31,7 @@ export default function Page() {
               Your trusted partner in real estate - connecting buyers, sellers,
               and renters with their perfect match.
             </p>
-            <LeadCaptureForm className="bg-white p-6 rounded-lg shadow-lg" />
+            <LeadCaptureForm className="bg-white p-6 text-black rounded-lg shadow-lg" />
           </div>
         </div>
       </section>
@@ -64,9 +64,9 @@ export default function Page() {
             <div className="md:w-1/2">
               <h2 className="text-3xl font-bold mb-4">Weekly Auctions</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Don't miss our exclusive weekly property auctions. Register now
-                to get notified about upcoming auctions and secure your dream
-                property at competitive prices.
+                Don&apos;t miss our exclusive weekly property auctions. Register
+                now to get notified about upcoming auctions and secure your
+                dream property at competitive prices.
               </p>
               <div className="bg-slate-100 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold mb-4">
@@ -93,7 +93,7 @@ export default function Page() {
             </div>
             <div className="md:w-1/2">
               <Image
-                src="https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?q=80&w=2070&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Property auction"
                 width={600}
                 height={400}
@@ -184,8 +184,8 @@ export default function Page() {
             <div className="md:w-1/2">
               <h2 className="text-3xl font-bold mb-4">Test Your Home Value</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Curious about your property's worth in today's market? Get a
-                free, no-obligation home valuation from our expert team.
+                Curious about your property&apos;s worth in today&apos;s market?
+                Get a free, no-obligation home valuation from our expert team.
               </p>
               <form className="space-y-4">
                 <div>
@@ -346,8 +346,8 @@ export default function Page() {
           <div className="bg-white p-8 rounded-lg shadow-lg text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Whether you're buying, selling, or renting, our team of experts is
-              here to help you every step of the way.
+              Whether you&apos;re buying, selling, or renting, our team of
+              experts is here to help you every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -508,7 +508,7 @@ export default function Page() {
                     href="/guides"
                     className="text-slate-300 hover:text-white"
                   >
-                    Buyer's Guide
+                    Buyer&apos;s Guide
                   </Link>
                 </li>
                 <li>
@@ -516,7 +516,7 @@ export default function Page() {
                     href="/guides"
                     className="text-slate-300 hover:text-white"
                   >
-                    Seller's Guide
+                    Seller&apos;s Guide
                   </Link>
                 </li>
                 <li>

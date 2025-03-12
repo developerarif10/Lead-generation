@@ -1,15 +1,16 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
-import Image from "next/image"
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 const testimonials = [
   {
     id: 1,
     name: "Sarah Johnson",
     role: "Home Buyer",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop",
     quote:
       "Working with SOLD WANTED.COM was an absolute pleasure. They helped me find my dream home within my budget and made the entire process stress-free.",
     rating: 5,
@@ -18,7 +19,8 @@ const testimonials = [
     id: 2,
     name: "Michael Rodriguez",
     role: "Property Seller",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop",
     quote:
       "I was amazed at how quickly my property sold! Their marketing strategy and professional photography made all the difference. Highly recommended!",
     rating: 5,
@@ -27,28 +29,33 @@ const testimonials = [
     id: 3,
     name: "Jennifer Williams",
     role: "Real Estate Investor",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop",
     quote:
-      "As an investor, I appreciate their deep market knowledge and ability to find properties with great potential. They've helped me build a profitable portfolio.",
+      "As an investor, I appreciate their deep market knowledge and ability to find properties with great potential. They&apos;ve helped me build a profitable portfolio.",
     rating: 4,
   },
-]
+];
 
 export default function TestimonialsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-  }
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
-  }
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    );
+  };
 
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">
+          What Our Clients Say
+        </h2>
 
         <div className="max-w-4xl mx-auto relative">
           <div className="bg-slate-50 rounded-lg p-8 shadow-sm">
@@ -67,7 +74,9 @@ export default function TestimonialsSection() {
                       key={i}
                       size={16}
                       className={
-                        i < testimonials[currentIndex].rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                        i < testimonials[currentIndex].rating
+                          ? "fill-yellow-400 text-yellow-400"
+                          : "text-gray-300"
                       }
                     />
                   ))}
@@ -76,10 +85,14 @@ export default function TestimonialsSection() {
 
               <div className="md:w-3/4">
                 <blockquote className="text-lg italic text-gray-600 mb-4">
-                  "{testimonials[currentIndex].quote}"
+                  {testimonials[currentIndex].quote}
                 </blockquote>
-                <div className="font-semibold">{testimonials[currentIndex].name}</div>
-                <div className="text-gray-500">{testimonials[currentIndex].role}</div>
+                <div className="font-semibold">
+                  {testimonials[currentIndex].name}
+                </div>
+                <div className="text-gray-500">
+                  {testimonials[currentIndex].role}
+                </div>
               </div>
             </div>
           </div>
@@ -89,7 +102,9 @@ export default function TestimonialsSection() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full ${index === currentIndex ? "bg-slate-800" : "bg-gray-300"}`}
+                className={`w-3 h-3 rounded-full ${
+                  index === currentIndex ? "bg-slate-800" : "bg-gray-300"
+                }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
@@ -113,6 +128,5 @@ export default function TestimonialsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
